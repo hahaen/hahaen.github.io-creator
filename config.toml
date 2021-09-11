@@ -108,7 +108,7 @@ enableEmoji = false
         # 搜索结果中高亮部分的 HTML 标签
         highlightTag = "em"
         # 是否在搜索索引中使用基于 baseURL 的绝对路径
-        absoluteURL = false
+        absoluteURL = true
         [languages.zh-cn.params.search.algolia]
           index = "index.zh-cn"
           appID = "PASDMWALPK"
@@ -121,9 +121,9 @@ enableEmoji = false
         [languages.zh-cn.params.home.profile]
           enable = true
           # Gravatar 邮箱，用于优先在主页显示的头像
-          gravatarEmail = "630606938@qq.com"
+          gravatarEmail = ""
           # 主页显示头像的 URL
-          avatarURL = "/images/avatar.png"
+          avatarURL = "/img/avatar.png"
           # 主页显示的网站标题 (支持 HTML 格式)
           title = "idpeng"
           # 主页显示的网站副标题
