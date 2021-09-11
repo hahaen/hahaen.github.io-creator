@@ -100,7 +100,7 @@ enableEmoji = false
         # 文章内容最长索引长度
         contentLength = 4000
         # 搜索框的占位提示语
-        placeholder = "请输入你想知道的文字"
+        placeholder = "请输入关键词..."
         # 最大结果数目
         maxResultLength = 10
         # 结果内容片段长度
