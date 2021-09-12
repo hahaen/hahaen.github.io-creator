@@ -65,12 +65,12 @@ enableEmoji = false
         url = "/categories/"
         title = ""
         weight = 3
-      [[languages.zh-cn.menu.main]]
+       [[languages.zh-cn.menu.main]]
         identifier = "github"
         pre = "<i class='fab fa-github fa-fw'></i>"
         post = ""
         name = ""
-        url = "https://github.com/idpeng1999"
+        url = "https://github.com/hahaen"
         title = "GitHub"
         weight = 4
     [languages.zh-cn.params]
