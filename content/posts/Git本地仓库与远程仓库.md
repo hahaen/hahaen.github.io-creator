@@ -7,7 +7,7 @@ categories: [java知识]
 ---
 # git系列操作
 ## git六行配置
-```angular2html
+```
 git config --global user.name 你的英文名
 git config --global user.email 你的邮箱
 git config --global push.default simple
@@ -20,7 +20,7 @@ git config --global core.autocrlf input
 * 可以跟 GitHub 的用户名和邮箱保持一致，也可以不一致。
 
 ## 新建代码库
-```angular2html
+```
 # 在当前目录新建一个 Git 代码库
 git init
 
@@ -31,7 +31,7 @@ git init [project-name]
 git clone [url]
 ```
 ## 配置文件
-```angular2html
+```
 # 显示当前的 Git 配置
 git config --list
 
@@ -40,7 +40,7 @@ git config -e [--global]
 
 ```
 ## 增加/删除文件
-```angular2html
+```
 # 添加指定文件到暂存区
 git add [file1] [file2] ...
 
@@ -81,7 +81,7 @@ git commit --amend -m [message]
 git commit --amend   ...
 ```
 ## 分支
-```angular2html
+```
 # 列出所有本地分支
 git branch
 
@@ -123,7 +123,7 @@ git push origin --delete
 git branch -dr
 ```
 ## 提交代码
-```angular2html
+```
 git pull 提交代码到远程仓库
 git push -u origin master 提交本地指定分支master代码到远程仓库
 ```
