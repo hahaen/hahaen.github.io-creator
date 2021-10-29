@@ -125,7 +125,7 @@ enableEmoji = false
           # 主页显示头像的 URL
           avatarURL = "/img/系统图片/avatar.png"
           # 主页显示的网站标题 (支持 HTML 格式)
-          title = "idpeng"
+          title = "hahaen"
           # 主页显示的网站副标题
           subtitle = "一个记录自己学习的哈哈博客"
           # 是否为副标题显示打字机动画
@@ -141,7 +141,7 @@ enableEmoji = false
           paginate = 6
       # 主页的社交信息设置
       [languages.zh-cn.params.social]
-        GitHub = "https://github.com/idpeng1999"
+        GitHub = "https://github.com/hahaen"
         Linkedin = ""
         Twitter = ""
         Instagram = ""
@@ -664,7 +664,7 @@ enableEmoji = false
 # Author config
 # 作者配置
 [author]
-  name = "idpeng"
+  name = "hahaen"
   email = "630606938@qq.com"
   link = ""
 
