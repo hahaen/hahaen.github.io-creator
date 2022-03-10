@@ -2,7 +2,7 @@
 title: "Java基础"
 date: 2021-11-21T22:31:36+08:00
 draft: false
-tags: [面试]
+tags: [java]
 categories: [面试技巧]
 ---
 ## Java程序的运行原理
