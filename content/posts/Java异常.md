@@ -1,11 +1,10 @@
 ---
-title: "Java异常体系"
-date: 2022-03-10T16:44:19+08:00
-draft: false 
+title: "Java异常"
+date: 2022-03-10T16:58:49+08:00
+draft: false
 tags: [面试]
 categories: [面试技巧]
 ---
-
 ## 异常基本类型
 
 * 异常类的基本类型是`Throwable`类
