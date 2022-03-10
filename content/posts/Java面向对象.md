@@ -2,7 +2,7 @@
 title: "Java面向对象"
 date: 2021-11-22T21:19:06+08:00
 draft: false
-tags: [java]
+tags: [面试]
 categories: [面试技巧]
 ---
 ## ==/equals区别？
