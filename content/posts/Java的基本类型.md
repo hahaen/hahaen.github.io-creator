@@ -14,3 +14,5 @@ categories: [面试技巧]
 * 布尔类型：boolean
 
 String是基本数据类型吗？答：**不是**
+
+![基本类型](/img/Java的基本类型/1.png)
