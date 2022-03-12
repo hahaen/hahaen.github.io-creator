@@ -2,8 +2,8 @@
 title: "Java的基本类型"
 date: 2022-03-10T16:29:48+08:00
 draft: false
-tags: [面试]
-categories: [面试技巧]
+tags: [java]
+categories: [java知识]
 ---
 
 基本数据类型是CPU可以直接进行运算的类型。Java定义了以下几种基本数据类型：

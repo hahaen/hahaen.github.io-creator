@@ -2,8 +2,8 @@
 title: "Java异常"
 date: 2022-03-10T16:58:49+08:00
 draft: false
-tags: [面试]
-categories: [面试技巧]
+tags: [java]
+categories: [java知识]
 ---
 ## 异常基本类型
 
@@ -50,7 +50,7 @@ categories: [面试技巧]
 * `throw`关键字是用于方法体内部，用来抛出一个Throwable类型的异常
 * `throws`关键字用于方法体外部的方法声明部分，用来声明方法可能会抛出某些异常
 
-```
+```java
 public static void test()throws Exception{
     throw new Exception("方法test中的Exception");
 }  

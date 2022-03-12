@@ -3,7 +3,7 @@ title: "HTTP的基础"
 date: 2021-09-13T15:33:51+08:00
 draft: false
 tags: [java]
-categories: [爬虫项目实战]
+categories: [java知识]
 ---
 ## Http方法与状态码
 

@@ -3,7 +3,7 @@ title: "JavaWeb前后端架构分析"
 date: 2021-09-11T00:56:15+08:00
 draft: false
 tags: [java]
-categories: [爬虫项目实战]
+categories: [java知识]
 ---
 ## 计算机网络是如何工作的
 在打开网页的时候发生了什么 

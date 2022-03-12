@@ -2,8 +2,8 @@
 title: "为什么重写equals时必须重写hashCode方法？"
 date: 2022-03-10T19:27:38+08:00
 draft: false
-tags: [面试]
-categories: [面试技巧]
+tags: [java]
+categories: [java知识]
 ---
 
 * 因为两个相等的对象的`hashCode`值必须是相等。

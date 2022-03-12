@@ -2,8 +2,8 @@
 title: "Continue、break和return的区别是什么？"
 date: 2022-03-10T17:14:47+08:00
 draft: false
-tags: [面试]
-categories: [面试技巧]
+tags: [java]
+categories: [java知识]
 ---
 在循环结构中，当循环条件不满足或者循环次数达到要求时，循环会正常结束。
 但是，有时候可能需要在循环的过程中，当发生了某种条件之后 ，提前终止循环，
@@ -19,7 +19,7 @@ categories: [面试技巧]
 
 下列语句的运行结果是什么？
 
-```
+```java
  public static void main(String[] args) {
         boolean flag = false;
         for (int i = 0; i <= 3; i++) {

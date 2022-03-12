@@ -2,8 +2,8 @@
 title: "JDK、JRE区别"
 date: 2022-03-10T16:29:11+08:00
 draft: false
-tags: [面试]
-categories: [面试技巧]
+tags: [java]
+categories: [java知识]
 ---
 JDK=JRE+javac
 

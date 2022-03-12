@@ -2,7 +2,7 @@
 title: "Drop、delete区别？"
 date: 2022-03-10T20:37:52+08:00
 draft: false
-tags: [面试]
+tags: [java]
 categories: [MySQL知识]
 ---
 
