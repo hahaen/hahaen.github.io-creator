@@ -3,7 +3,7 @@ title: "Sql注入"
 date: 2022-03-14T15:25:04+08:00
 draft: false
 tags: [java]
-categories: [java知识]
+categories: [MySQL知识]
 ---
 ## 万能密码
 
