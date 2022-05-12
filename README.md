@@ -1,4 +1,4 @@
-# [哈哈博客](http://idpeng.xyz/)
+# [哈哈博客](http://hahaen.github.io/)
 
 * 启动hugo服务(预览)
 
