@@ -2,6 +2,7 @@
 
 # Log file
 *.log
+*.lock
 
 # BlueJ files
 *.ctxt
