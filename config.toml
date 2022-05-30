@@ -108,7 +108,7 @@ enableEmoji = false
       [languages.zh-cn.params.search]
         enable = true
         # 搜索引擎的类型 ("lunr", "algolia")
-        type = "algolia"
+        type = "lunr"
         # 文章内容最长索引长度
         contentLength = 4000
         # 搜索框的占位提示语
@@ -122,9 +122,9 @@ enableEmoji = false
         # 是否在搜索索引中使用基于 baseURL 的绝对路径
         absoluteURL = true
         [languages.zh-cn.params.search.algolia]
-          index = "index.zh-cn"
-          appID = "YKOM6PKLUY"
-          searchKey = "a44c110d3ac360be2c69cd79d34b77a8"
+          index = ""
+          appID = ""
+          searchKey = ""
       # 主页信息设置
       [languages.zh-cn.params.home]
         # RSS 文章数目
@@ -141,9 +141,9 @@ enableEmoji = false
           # 主页显示的网站副标题
           subtitle = "一个记录自己学习的哈哈博客!"
           # 是否为副标题显示打字机动画
-          typeit = false
+          typeit = true
           # 是否显示社交账号
-          social = true
+          social = false
           # 免责声明 (支持 HTML 格式)
           disclaimer = ""
         # 主页文章列表
@@ -230,7 +230,7 @@ enableEmoji = false
       # 盘古之白配置 since v0.2.12
       [languages.zh-cn.params.pangu]
         # 适用于中文写作用户
-        enable = true
+        enable = false
       # 水印配置 since v0.2.12
       # 详细参数见 https://github.com/Lruihao/watermark#readme
       [languages.zh-cn.params.watermark]
@@ -732,7 +732,7 @@ enableEmoji = false
   [params.pangu]
     # For Chinese writing
     # 适用于中文写作用户
-    enable = true
+    enable = false
 
   # Watermark config since v0.2.12
   # Detail config see https://github.com/Lruihao/watermark#readme
