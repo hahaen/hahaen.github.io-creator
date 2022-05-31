@@ -1,4 +1,4 @@
-baseURL = "https://fixit.lruihao.cn"
+baseURL = "https://hahaen.github.io/"
 # [en, zh-cn, fr, pl, ...] determines default content language
 # [en, zh-cn, fr, pl, ...] 设置默认的语言
 defaultContentLanguage = "zh-cn"
@@ -19,13 +19,13 @@ ignoreErrors = ["error-remote-getjson"]
 
 # whether to use robots.txt
 # 是否使用 robots.txt
-enableRobotsTXT = false
+enableRobotsTXT = true
 # whether to use git commit log
 # 是否使用 git 信息
 enableGitInfo = false
 # whether to use emoji code
 # 是否使用 emoji 代码
-enableEmoji = false
+enableEmoji = true
 
 # Post frontmatter config
 [frontmatter]
@@ -120,7 +120,7 @@ enableEmoji = false
         # 搜索结果中高亮部分的 HTML 标签
         highlightTag = "em"
         # 是否在搜索索引中使用基于 baseURL 的绝对路径
-        absoluteURL = true
+        absoluteURL = false
         [languages.zh-cn.params.search.algolia]
           index = ""
           appID = ""
@@ -400,7 +400,7 @@ enableEmoji = false
     hiddenFromSearch = false
     # whether to enable twemoji
     # 是否使用 twemoji
-    twemoji = false
+    twemoji = true
     # whether to enable lightgallery
     # 是否使用 lightgallery
     lightgallery = false
