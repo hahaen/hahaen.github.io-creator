@@ -33,6 +33,9 @@ other = "文章"
 [allSome]
 other = "所有{{ .Some }}"
 
+[totalwordCount]
+other = "總計約 {{ .Count }} 字"
+
 [tag]
 other = "標籤"
 
@@ -154,9 +157,6 @@ other = "收錄於 {{ .Categories }}"
 [wordCount]
 other = "約 {{ .Count }} 字"
 
-[totalwordCount]
-other = "總計約 {{ .Count }} 字"
-
 [readingTime]
 other = "預計閱讀 {{ .Count }} 分鐘"
 
@@ -189,6 +189,18 @@ other = "閱讀全文"
 
 [expirationReminder]
 other = "本文最後更新於 {{ .Date }}，文中內容可能已過時。"
+
+[encryptedAbstract]
+other = "本文已加密，囙此其原始內容不可見！"
+
+[encryptedMessage]
+other = "請輸入密碼"
+
+[password]
+other = "密碼"
+
+[encryptyAgain]
+other = "重新加密"
 # === posts/single.html ===
 
 # === 404.html ===

@@ -184,6 +184,19 @@
   {{- $config = dict "watermark" .Site.Params.watermark | merge $config -}}
 {{- end -}}
 
+{{- /* Content Decryption */ -}}
+{{- if $params.password -}}
+  {{- $cryptoCoreJS := $cdn.cryptoCoreJS | default "lib/crypto-js/core.js" -}}
+  {{- $cryptoEncBase64JS := $cdn.cryptoEncBase64JS | default "lib/crypto-js/enc-base64.js" -}}
+  {{- $cryptoMd5JS := $cdn.cryptoCoreJS | default "lib/crypto-js/md5.js" -}}
+  {{- $cryptoSha256JS := $cdn.cryptoCoreJS | default "lib/crypto-js/sha256.js" -}}
+  {{- dict "Source" $cryptoCoreJS "Minify" true "Fingerprint" $fingerprint "Defer" true | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
+  {{- dict "Source" $cryptoEncBase64JS "Minify" true "Fingerprint" $fingerprint "Defer" true | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
+  {{- dict "Source" $cryptoMd5JS "Minify" true "Fingerprint" $fingerprint "Defer" true | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
+  {{- dict "Source" $cryptoSha256JS "Minify" true "Fingerprint" $fingerprint "Defer" true | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
+  {{- dict "Source" "js/fixit-decryptor.js" "Minify" hugo.IsProduction "Fingerprint" $fingerprint "Defer" true | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
+{{- end -}}
+
 {{- /* 不蒜子 */ -}}
 {{- if eq .Site.Params.ibruce.enable true -}}
   {{- $source := "//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" -}}
@@ -191,13 +204,12 @@
 {{- end -}}
 
 {{- /* Site creation time */ -}}
-{{- /* TODO: The parameter `ibruce.siteTime` will be deleted in v0.2.15 */ -}}
-{{- if .Site.Params.ibruce.siteTime | or .Site.Params.footer.siteTime -}}
-  {{- $config = dict "siteTime" (.Site.Params.ibruce.siteTime | default .Site.Params.footer.siteTime) | merge $config -}}
+{{- if .Site.Params.footer.siteTime -}}
+  {{- $config = dict "siteTime" .Site.Params.footer.siteTime | merge $config -}}
 {{- end -}}
 
 {{- /* PWA */ -}}
-{{- if eq hugo.Environment "production" -}}
+{{- if hugo.IsProduction -}}
   {{- $config = dict "enablePWA" .Site.Params.enablePWA | merge $config -}}
 {{- end -}}
 
@@ -225,7 +237,7 @@
 
 {{- /* Custom script */ -}}
 {{- if eq .Site.Params.customJS.enable true -}}
-  {{- $source = "js/_custom.js" -}}
+  {{- $source := "js/_custom.js" -}}
   {{- dict "Source" $source "Minify" true "Fingerprint" $fingerprint "Defer" true | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
 {{- end -}}
 

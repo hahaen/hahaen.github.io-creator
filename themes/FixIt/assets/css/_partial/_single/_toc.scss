@@ -9,7 +9,7 @@
     font-size: $toc-content-font-size;
 
     ul {
-      text-indent: -0.85rem;
+      text-indent: -0.8rem;
       padding-left: 0.8rem;
       list-style: none;
 
@@ -61,6 +61,7 @@
 
   .toc-title {
     margin: 0.5rem 0;
+    cursor: pointer;
 
     &::before {
       content: '|';
@@ -72,15 +73,27 @@
         color: $global-border-color-dark;
       }
     }
+
+    i.toc-icon {
+      @include transition(transform 0.2s ease);
+    }
+  }
+
+  &.toc-hidden i.toc-icon {
+    @include transform(rotate(-90deg));
+    @include transition(transform 0.2s ease);
   }
 
   .toc-content {
+    overflow-y: scroll;
+    max-height: calc(100vh - #{2*$header-height});
+
     &.always-active ul {
       display: block;
     }
 
     > nav > ul {
-      margin: 0.625rem 0;
+      margin: 0;
     }
 
     ul {

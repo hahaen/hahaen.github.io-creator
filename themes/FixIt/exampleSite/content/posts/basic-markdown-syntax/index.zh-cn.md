@@ -1,5 +1,4 @@
 ---
-weight: 4
 title: "Markdown 基本语法"
 date: 2019-12-01T21:57:40+08:00
 lastmod: 2022-01-20T17:44:40+08:00
@@ -53,7 +52,7 @@ John Gruber, Markdown 的作者如是说：
 话不多说，我们来回顾一下 Markdown 的主要语法以及生成的 HTML 样式！
 
 {{< admonition tip >}}
-:(far fa-bookmark fa-fw): 将此页保存为书签，以备将来参考！
+:(fa-regular fa-bookmark fa-fw): 将此页保存为书签，以备将来参考！
 {{< /admonition >}}
 
 ## 1 标题

@@ -33,6 +33,10 @@ other = "Posts"
 [allSome]
 other = "Tous {{ .Some }}"
 
+[totalwordCount]
+one = "" # waitting for translation
+other = "" # waitting for translation
+
 [tag]
 other = "Balise"
 
@@ -152,10 +156,6 @@ other = "inclus dans {{ .Categories }}"
 one = "Un mot"
 other = "{{ .Count }} mots"
 
-[totalwordCount]
-one = "" # waitting for translation
-other = "" # waitting for translation
-
 [readingTime]
 one = "Une minute"
 other = "{{ .Count }} minutes"
@@ -186,6 +186,18 @@ other = "Accueil"
 
 [readMore]
 other = "En savoir plus"
+
+[encryptedAbstract]
+other = "" # waitting for translation
+
+[encryptedMessage]
+other = "" # waitting for translation
+
+[password]
+other = "Mot de passe"
+
+[encryptyAgain]
+other = "" # waitting for translation
 # === posts/single.html ===
 
 # === 404.html ===

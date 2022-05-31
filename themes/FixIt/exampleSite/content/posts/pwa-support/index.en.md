@@ -1,5 +1,5 @@
 ---
-weight: 7
+weight: 5
 title: "Theme Documentation - PWA Support"
 date: 2022-01-26T09:32:56+08:00
 draft: false
@@ -22,7 +22,7 @@ menu:
     name: "PWA Support"
     title: "Guide to setup PWA in FixIt."
     parent: "documentation"
-    pre: "<i class='fab fa-readme fa-fw fa-sm'></i>"
+    pre: "<i class='fa-brands fa-readme fa-fw fa-sm'></i>"
 ---
 
 Find out how to turn your FixIt site into a Progressive Web App.

@@ -33,6 +33,10 @@ other = "Статьи"
 [allSome]
 other = "Все {{ .Some }}"
 
+[totalwordCount]
+one = "" # waitting for translation
+other = "" # waitting for translation
+
 [tag]
 other = "Тэг"
 
@@ -152,10 +156,6 @@ other = "включен в {{ .Categories }}"
 one = "Одно слово"
 other = "{{ .Count }} слов"
 
-[totalwordCount]
-one = "" # waitting for translation
-other = "" # waitting for translation
-
 [readingTime]
 one = "Одна минута"
 other = "{{ .Count }} минут"
@@ -189,6 +189,18 @@ other = "Читать больше"
 
 [expirationReminder]
 other = "Эта статья последний раз обновлялась {{ .Date }}, содержание может быть устаревшим."
+
+[encryptedAbstract]
+other = "" # waitting for translation
+
+[encryptedMessage]
+other = "" # waitting for translation
+
+[password]
+other = "арготизм"
+
+[encryptyAgain]
+other = "" # waitting for translation
 # === posts/single.html ===
 
 # === 404.html ===

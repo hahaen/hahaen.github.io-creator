@@ -16,11 +16,14 @@ categories: ["documentation"]
 
 lightgallery: true
 
+toc:
+  auto: false
+
 menu:
   main:
     title: "探索 Hugo - FixIt 主题的全部内容和背后的核心概念。"
     parent: "documentation"
-    pre: "<i class='fab fa-readme fa-fw fa-sm'></i>"
+    pre: "<i class='fa-brands fa-readme fa-fw fa-sm'></i>"
 ---
 
 探索 Hugo - **FixIt** 主题的全部内容和背后的核心概念。
@@ -31,14 +34,14 @@ menu:
 
 由于 Hugo 提供的便利性，[Hugo](https://gohugo.io/) 本身是这个主题唯一的依赖。
 
-直接安装满足你操作系统 (**Windows**, **Linux**, **macOS**) 的最新版本 [:(far fa-file-archive fa-fw): Hugo (> 0.62.0)](https://gohugo.io/getting-started/installing/).
+直接安装满足你操作系统 (**Windows**, **Linux**, **macOS**) 的最新版本 [:(fa-regular fa-file-archive fa-fw): Hugo (> 0.62.0)](https://gohugo.io/getting-started/installing/).
 
 {{< admonition note "为什么不支持早期版本的 Hugo?" >}}
 由于 [Markdown 渲染钩子函数](https://gohugo.io/getting-started/configuration-markup#markdown-render-hooks) 在 [Hugo 圣诞节版本](https://gohugo.io/news/0.62.0-relnotes/) 中被引入，本主题只支持高于 **0.62.0** 的 Hugo 版本。
 {{< /admonition >}}
 
 {{< admonition tip "推荐使用 Hugo extended 版本" >}}
-由于这个主题的一些特性需要将 :(fab fa-sass fa-fw): SCSS 转换为 :(fab fa-css3 fa-fw): CSS, 推荐使用 Hugo **extended** 版本来获得更好的使用体验。
+由于这个主题的一些特性需要将 :(fa-brands fa-sass fa-fw): SCSS 转换为 :(fa-brands fa-css3 fa-fw): CSS, 推荐使用 Hugo **extended** 版本来获得更好的使用体验。
 {{< /admonition >}}
 
 ## 2 安装
@@ -58,7 +61,7 @@ cd my_website
 
 **FixIt** 主题的仓库是：<https://github.com/Lruihao/FixIt>
 
-你可以下载主题的 [最新版本 :(far fa-file-archive fa-fw): .zip 文件](https://github.com/Lruihao/FixIt/releases) 并且解压放到 `themes` 目录。
+你可以下载主题的 [最新版本 :(fa-regular fa-file-archive fa-fw): .zip 文件](https://github.com/Lruihao/FixIt/releases) 并且解压放到 `themes` 目录。
 
 另外，也可以直接把这个主题克隆到 `themes` 目录：
 
@@ -198,7 +201,7 @@ hugo
 
 除了 [Hugo 全局配置](https://gohugo.io/overview/configuration/) 和 [菜单配置](#basic-configuration) 之外，**FixIt** 主题还允许您在网站配置中定义以下参数（这是一个示例 `config.toml`, 其内容为默认值）.
 
-请打开下面的代码块查看完整的示例配置 :(far fa-hand-point-down fa-fw)::
+请打开下面的代码块查看完整的示例配置 :(fa-regular fa-hand-point-down fa-fw)::
 
 ```toml
 [params]
@@ -268,9 +271,9 @@ hugo
 
   # 页面头部导航栏配置
   [params.header]
-    # 桌面端导航栏模式 ("sticky", "normal", "auto")
+    # {{< version 0.2.13 changed >}} 桌面端导航栏模式 ("sticky", "normal", "auto")
     desktopMode = "sticky"
-    # 移动端导航栏模式 ("sticky", "normal", "auto")
+    # {{< version 0.2.13 changed >}} 移动端导航栏模式 ("sticky", "normal", "auto")
     mobileMode = "auto"
     # {{< version 0.2.0 >}} 页面头部导航栏标题配置
     [params.header.title]
@@ -563,7 +566,7 @@ hugo
       Skype = false
       Trello = false
       Mix = false
-    # {{< version 0.2.13 changed >}} 评论系统设置
+    # {{< version 0.2.14 changed >}} 评论系统设置
     [params.page.comment]
       enable = false
       # {{< version 0.2.13 >}} {{< link "https://artalk.js.org/" Artalk >}} 评论系统设置 (https://artalk.js.org/)
@@ -579,15 +582,13 @@ hugo
         maxNesting = 3
         # 当 `params.page.lightgallery` 启用时生效
         lightgallery = false
-      # {{< link "https://disqus.com/" Disqus >}} 评论系统设置 (https://disqus.com)
+      # {{< version 0.1.1 >}} {{< link "https://disqus.com/" Disqus >}} 评论系统设置 (https://disqus.com)
       [params.page.comment.disqus]
-        # {{< version 0.1.1 >}}
         enable = false
         # Disqus 的 shortname，用来在文章中启用 Disqus 评论系统
         shortname = ""
-      # {{< link "https://github.com/gitalk/gitalk" Gitalk >}} 评论系统设置 (https://github.com/gitalk/gitalk)
+      # {{< version 0.1.1 >}} {{< link "https://github.com/gitalk/gitalk" Gitalk >}} 评论系统设置 (https://github.com/gitalk/gitalk)
       [params.page.comment.gitalk]
-        # {{< version 0.1.1 >}}
         enable = false
         owner = ""
         repo = ""
@@ -715,6 +716,11 @@ hugo
     # 打字结束之后光标的持续时间（单位是毫秒，"-1" 代表无限大）
     duration = -1
   
+  # {{< version 0.2.12 >}} 盘古之白配置
+  [params.pangu]
+    # 适用于中文写作用户
+    enable = false
+  
   # {{< version 0.2.12 >}} 水印配置
   # 详细参数见 https://github.com/Lruihao/watermark#readme
   [params.watermark]
@@ -737,7 +743,7 @@ hugo
     rotate = 15
     # 水印字体大小，单位：rem
     fontSize = 0.85
-    # 水印字体
+    # {{< version 0.2.13 >}} 水印字体
     fontFamily = 'inherit'
 
   # {{< version 0.2.12 >}} 不蒜子统计
@@ -876,21 +882,32 @@ hugo
   [privacy.youtube]
     privacyEnhanced = true
 
-# 用于输出 Markdown 格式文档的设置
+# {{< version 0.2.15 changed >}}
 [mediaTypes]
-  [mediaTypes."text/plain"]
+  # 用于输出 Markdown 格式文档的设置
+  [mediaTypes."text/markdown"]
     suffixes = ["md"]
+  # 用于输出 txt 格式文档的设置
+  [mediaTypes."text/plain"]
+    suffixes = ["txt"]
 
-# 用于输出 Markdown 格式文档的设置
-[outputFormats.MarkDown]
-  mediaType = "text/plain"
-  isPlainText = true
-  isHTML = false
+# {{< version 0.2.15 changed >}}
+[outputFormats]
+  # 用于输出 Markdown 格式文档的设置
+  [outputFormats.MarkDown]
+    mediaType = "text/markdown"
+    isPlainText = true
+    isHTML = false
+  # {{< version 0.2.15 >}} 用于输出 baidu_urls.txt 文件的设置
+  [outputFormats.BaiduUrls]
+    baseName = "baidu_urls"
+    mediaType = "text/plain"
+    isPlainText = true
+    isHTML = false
 
-# 用于 Hugo 输出文档的设置
+# {{< version 0.2.15 changed >}} 用于 Hugo 输出文档的设置
 [outputs]
-  # {{< version 0.2.0 changed >}}
-  home = ["HTML", "RSS", "JSON"]
+  home = ["HTML", "RSS", "JSON", "BaiduUrls"]
   page = ["HTML", "MarkDown"]
   section = ["HTML", "RSS"]
   taxonomy = ["HTML", "RSS"]
@@ -1143,7 +1160,7 @@ menu:
   main:
     title: "探索 Hugo - FixIt 主题的全部内容和背后的核心概念。"
     parent: "documentation"
-    pre: "<i class='fab fa-readme fa-fw fa-sm'></i>"
+    pre: "<i class='fa-brands fa-readme fa-fw fa-sm'></i>"
 ---
 ...
 ```
@@ -1160,19 +1177,19 @@ menu:
 
 | 语言 | Hugo 代码 | HTML `lang` 属性 | 主题文档 | Lunr.js 支持 |
 |:----|:----:|:----:|:----:|:----:|
-| 英语 | `en` | `en` | :(far fa-check-square fa-fw): | :(far fa-check-square fa-fw): |
-| 简体中文 | `zh-cn` | `zh-CN` | :(far fa-check-square fa-fw): | :(far fa-check-square fa-fw): |
-| 法语 | `fr` | `fr` | :(far fa-square fa-fw): | :(far fa-check-square fa-fw): |
-| 波兰语 | `pl` | `pl` | :(far fa-square fa-fw): | :(far fa-square fa-fw): |
-| 巴西葡萄牙语 | `pt-br` | `pt-BR` | :(far fa-square fa-fw): | :(far fa-check-square fa-fw): |
-| 意大利语 | `it` | `it` | :(far fa-square fa-fw): | :(far fa-check-square fa-fw): |
-| 西班牙语 | `es` | `es` | :(far fa-square fa-fw): | :(far fa-check-square fa-fw): |
-| 德语 | `de` | `de` | :(far fa-square fa-fw): | :(far fa-check-square fa-fw): |
-| 塞尔维亚语 | `sr` | `sr` | :(far fa-square fa-fw): | :(far fa-square fa-fw): |
-| 俄语 | `ru` | `ru` | :(far fa-square fa-fw): | :(far fa-check-square fa-fw): |
-| 罗马尼亚语 | `ro` | `ro` | :(far fa-square fa-fw): | :(far fa-check-square fa-fw): |
-| 越南语 | `vi` | `vi` | :(far fa-square fa-fw): | :(far fa-check-square fa-fw): |
-| 繁体中文 | `zh-tw` | `zh-TW` | :(far fa-square fa-fw): | :(far fa-check-square fa-fw): |
+| 英语 | `en` | `en` | :(fa-regular fa-check-square fa-fw): | :(fa-regular fa-check-square fa-fw): |
+| 简体中文 | `zh-cn` | `zh-CN` | :(fa-regular fa-check-square fa-fw): | :(fa-regular fa-check-square fa-fw): |
+| 法语 | `fr` | `fr` | :(fa-regular fa-square fa-fw): | :(fa-regular fa-check-square fa-fw): |
+| 波兰语 | `pl` | `pl` | :(fa-regular fa-square fa-fw): | :(fa-regular fa-square fa-fw): |
+| 巴西葡萄牙语 | `pt-br` | `pt-BR` | :(fa-regular fa-square fa-fw): | :(fa-regular fa-check-square fa-fw): |
+| 意大利语 | `it` | `it` | :(fa-regular fa-square fa-fw): | :(fa-regular fa-check-square fa-fw): |
+| 西班牙语 | `es` | `es` | :(fa-regular fa-square fa-fw): | :(fa-regular fa-check-square fa-fw): |
+| 德语 | `de` | `de` | :(fa-regular fa-square fa-fw): | :(fa-regular fa-check-square fa-fw): |
+| 塞尔维亚语 | `sr` | `sr` | :(fa-regular fa-square fa-fw): | :(fa-regular fa-square fa-fw): |
+| 俄语 | `ru` | `ru` | :(fa-regular fa-square fa-fw): | :(fa-regular fa-check-square fa-fw): |
+| 罗马尼亚语 | `ro` | `ro` | :(fa-regular fa-square fa-fw): | :(fa-regular fa-check-square fa-fw): |
+| 越南语 | `vi` | `vi` | :(fa-regular fa-square fa-fw): | :(fa-regular fa-check-square fa-fw): |
+| 繁体中文 | `zh-tw` | `zh-TW` | :(fa-regular fa-square fa-fw): | :(fa-regular fa-check-square fa-fw): |
 
 ### 4.2 基本配置
 
@@ -1302,7 +1319,7 @@ defaultContentLanguage = "zh-cn"
 
 要覆盖默认值，请在你项目的 i18n 目录 `i18n/<languageCode>.toml` 中创建一个新文件，并从 `themes/FixIt/i18n/en.toml` 中获得提示。
 
-另外，由于你的翻译可能会帮助到其他人，请花点时间通过 [创建一个 PR :(fas fa-code-branch fa-fw):](https://github.com/Lruihao/FixIt/pulls) 来贡献主题翻译，谢谢！
+另外，由于你的翻译可能会帮助到其他人，请花点时间通过 [创建一个 PR :(fa-solid fa-code-branch fa-fw):](https://github.com/Lruihao/FixIt/pulls) 来贡献主题翻译，谢谢！
 
 ## 5 搜索
 

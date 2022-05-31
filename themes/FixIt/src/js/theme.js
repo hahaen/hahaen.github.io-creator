@@ -46,7 +46,9 @@ class Util {
   }
 }
 
-class Theme {
+class FixIt {
+  #encrypted = typeof FixItDecryptor !== 'undefined';
+
   constructor() {
     this.config = window.config;
     this.data = this.config.data;
@@ -332,7 +334,7 @@ class Theme {
                 searchConfig.type === 'algolia'
                   ? {
                       searchType: 'algolia',
-                      icon: '<i class="fab fa-algolia fa-fw"></i>',
+                      icon: '<i class="fa-brands fa-algolia fa-fw"></i>',
                       href: 'https://www.algolia.com/'
                     }
                   : {
@@ -415,14 +417,14 @@ class Theme {
         // code title
         const $title = document.createElement('span');
         $title.classList.add('code-title');
-        $title.insertAdjacentHTML('afterbegin', '<i class="arrow fas fa-chevron-right fa-fw"></i>');
+        $title.insertAdjacentHTML('afterbegin', '<i class="arrow fa-solid fa-chevron-right fa-fw"></i>');
         $title.addEventListener('click', () => {
           $chroma.classList.toggle('open');
         }, false);
         $header.appendChild($title);
         // ellipses icon
         const $ellipses = document.createElement('span');
-        $ellipses.insertAdjacentHTML('afterbegin', '<i class="fas fa-ellipsis-h fa-fw"></i>');
+        $ellipses.insertAdjacentHTML('afterbegin', '<i class="fa-solid fa-ellipsis-h fa-fw"></i>');
         $ellipses.classList.add('ellipses');
         $ellipses.addEventListener('click', () => {
           $chroma.classList.add('open');
@@ -432,7 +434,7 @@ class Theme {
         if (this.config.code.editable) {
           const $edit = document.createElement('span');
           $edit.classList.add('edit');
-          $edit.insertAdjacentHTML('afterbegin', `<i class="fas fa-key fa-fw" title="${this.config.code.editUnLockTitle}"></i>`);
+          $edit.insertAdjacentHTML('afterbegin', `<i class="fa-solid fa-key fa-fw" title="${this.config.code.editUnLockTitle}"></i>`);
           $edit.addEventListener('click', () => {
             const $iconKey = $edit.querySelector('.fa-key');
             const $iconLock = $edit.querySelector('.fa-lock');
@@ -457,7 +459,7 @@ class Theme {
         // copy button
         if (this.config.code.copyTitle) {
           const $copy = document.createElement('span');
-          $copy.insertAdjacentHTML('afterbegin', '<i class="far fa-copy fa-fw"></i>');
+          $copy.insertAdjacentHTML('afterbegin', '<i class="fa-regular fa-copy fa-fw"></i>');
           $copy.classList.add('copy');
           const code = $code.innerText;
           if (this.config.code.maxShownLines < 0 || code.split('\n').length < this.config.code.maxShownLines + 2) {
@@ -495,7 +497,9 @@ class Theme {
       });
     }
   }
-
+  /**
+   * init table of contents
+   */
   initToc() {
     const $tocCore = document.getElementById('TableOfContents');
     if ($tocCore === null) {
@@ -507,7 +511,7 @@ class Theme {
         $tocCore.parentElement.removeChild($tocCore);
         $tocContentStatic.appendChild($tocCore);
       }
-      if (this._tocOnScroll) this.scrollEventSet.delete(this._tocOnScroll);
+      this._tocOnScroll && this.scrollEventSet.delete(this._tocOnScroll);
     } else {
       const $tocContentAuto = document.getElementById('toc-content-auto');
       if ($tocCore.parentElement !== $tocContentAuto) {
@@ -557,6 +561,19 @@ class Theme {
       this._tocOnScroll();
       this.scrollEventSet.add(this._tocOnScroll);
     }
+  }
+
+  initTocListener() {
+    const $toc = document.getElementById('toc-auto');
+    const $tocContentAuto = document.getElementById('toc-content-auto');
+    document.querySelector('#toc-auto>.toc-title')?.addEventListener('click', () => {
+      const animation = ['animate__faster']
+      const tocHidden = $toc.classList.contains('toc-hidden');
+      animation.push(tocHidden ? 'animate__fadeIn' : 'animate__fadeOut');
+      $tocContentAuto.classList.remove(tocHidden ? 'animate__fadeOut' : 'animate__fadeIn');
+      this.util.animateCSS($tocContentAuto, animation, true);
+      $toc.classList.toggle('toc-hidden');
+    }, false)
   }
 
   initMath() {
@@ -878,7 +895,39 @@ class Theme {
   }
 
   initPangu() {
+     // TODO 待优化：只渲染
     this.config.enablePangu && pangu.autoSpacingPage();
+  }
+
+  initFixItDecryptor() {
+    const $tocNodes = document.querySelectorAll('#toc-auto>.d-none, #toc-static.d-none');
+    this.decryptor = new FixItDecryptor({
+      decrypted: () => {
+        this.initTwemoji();
+        this.initDetails();
+        this.initLightGallery();
+        this.initHighlight();
+        this.initTable();
+        this.initHeaderLink();
+        this.initMath();
+        this.initMermaid();
+        this.initEcharts();
+        this.initTypeit();
+        this.initMapbox();
+        this.util.forEach($tocNodes, ($element) => {
+          $element.classList.remove('d-none');
+        });
+        this.initToc();
+        this.initTocListener();
+        this.initPangu();
+      },
+      reset: () => {
+        this.util.forEach($tocNodes, ($element) => {
+          $element.classList.add('d-none');
+        });
+      }
+    });
+    this.decryptor.init();
   }
 
   onScroll() {
@@ -939,7 +988,9 @@ class Theme {
       if (!this._resizeTimeout) {
         this._resizeTimeout = window.setTimeout(() => {
           this._resizeTimeout = null;
-          for (let event of this.resizeEventSet) event();
+          for (let event of this.resizeEventSet) {
+            event();
+          }
           this.initToc();
           this.initMermaid();
           this.initSearch();
@@ -958,44 +1009,50 @@ class Theme {
 
   init() {
     try {
+      if (this.#encrypted) {
+        this.initFixItDecryptor();
+      } else {
+        this.initTwemoji();
+        this.initDetails();
+        this.initLightGallery();
+        this.initHighlight();
+        this.initTable();
+        this.initHeaderLink();
+        this.initMath();
+        this.initMermaid();
+        this.initEcharts();
+        this.initTypeit();
+        this.initMapbox();
+        this.initPangu();
+      }
       this.initSVGIcon();
-      this.initTwemoji();
       this.initMenu();
       this.initSwitchTheme();
       this.initSearch();
-      this.initDetails();
-      this.initLightGallery();
-      this.initHighlight();
-      this.initTable();
-      this.initHeaderLink();
-      this.initMath();
-      this.initMermaid();
-      this.initEcharts();
-      this.initTypeit();
-      this.initMapbox();
       this.initCookieconsent();
       this.initSiteTime();
       this.initServiceWorker();
       this.initWatermark();
-      this.initPangu();
+
+      window.setTimeout(() => {
+        this.initComment();
+        if (!this.#encrypted) {
+          this.initToc();
+          this.initTocListener();
+        }
+        this.onScroll();
+        this.onResize();
+        this.onClickMask();
+      }, 100);
     } catch (err) {
       console.error(err);
     }
-
-    window.setTimeout(() => {
-      this.initComment();
-      this.initToc();
-
-      this.onScroll();
-      this.onResize();
-      this.onClickMask();
-    }, 100);
   }
 }
 
 const themeInit = () => {
-  const theme = new Theme();
-  theme.init();
+  window.fixit = new FixIt();
+  window.fixit.init();
 };
 
 if (document.readyState !== 'loading') {

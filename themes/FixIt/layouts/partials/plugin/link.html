@@ -1,6 +1,9 @@
 {{- $rel := "" -}}
 {{- $external := false -}}
-{{- $class := "" -}}
+{{- $class := .Class | default "" -}}
+{{- if eq .Card true -}}
+  {{- $class = trim (printf "%v %v" "card-link" $class) " " -}}
+{{- end -}}
 <a
   href="{{ .Destination | safeURL }}"
   {{ with .Title }}
@@ -14,11 +17,8 @@
   {{ if $rel | or .Rel }}
     rel="{{ $rel }}{{ with .Rel }} {{ . }}{{ end }}"
   {{ end }}
-  {{ if eq .Card true }}
-    {{ $class = "card-link" }}
-  {{ end }}
-  {{ if $class | or .Class }}
-    class="{{ with $class }}{{ . }} {{ end }}{{ with .Class }}{{ . }}{{ end }}"
+  {{ with $class }}
+    class="{{ with $class }}{{ . }}{{ end }}"
   {{ end }}
   {{ with .Download }}
     download="{{ . }}"
@@ -37,12 +37,12 @@
       | and (eq ((strings.HasSuffix .Content `</i>`) | or (strings.HasSuffix .Content `):`)) false)
     -}}
       {{- if .Download -}}
-        {{- dict "Class" "fas fa-cloud-download-alt fa-fw ms-1" | partial "plugin/icon.html" -}}
+        {{- dict "Class" "fa-solid fa-cloud-download-alt fa-fw ms-1" | partial "plugin/icon.html" -}}
       {{- else -}}
-        {{- dict "Class" "fas fa-external-link-alt fa-fw fa-xs ms-1" | partial "plugin/icon.html" -}}
+        {{- dict "Class" "fa-solid fa-external-link-alt fa-fw fa-xs ms-1" | partial "plugin/icon.html" -}}
       {{- end -}}
     {{- else if .Download }}
-      {{- dict "Class" "fas fa-download fa-fw ms-1" | partial "plugin/icon.html" -}}
+      {{- dict "Class" "fa-solid fa-download fa-fw ms-1" | partial "plugin/icon.html" -}}
     {{- end -}}
   {{- else -}}
     <span class="cl-backdrop"></span>

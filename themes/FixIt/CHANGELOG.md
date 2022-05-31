@@ -2,9 +2,27 @@
 All notable changes to this project will be documented in this file.
 <!-- Releases see https://github.com/Lruihao/FixIt/releases -->
 
+## v0.2.15
+
+> Add hugo new features support.
+> Snapshot: 
+
+- :tada: Feat: add content encryption of pages ([#123](https://github.com/Lruihao/FixIt/issues/123))
+- :sparkles: Feat: add total word count feature in section and remove from footer ([#124](https://github.com/Lruihao/FixIt/issues/124))
+- :sparkles: Feat: enhance auto toc feature ([#104](https://github.com/Lruihao/FixIt/issues/104) [#136](https://github.com/Lruihao/FixIt/issues/136))
+- :sparkles: Feat(SEO): add options to make output baidu_urls.txt file ([#138](https://github.com/Lruihao/FixIt/issues/138))
+- :bug: Fix: Giscus comments invalid config `inputPosition`
+- :bug: Fix: busuanzi logic error
+- :bug: Fix: close comment system logic error when the article was expired
+- :art: Style: add scroll bar for auto toc ([#136](https://github.com/Lruihao/FixIt/issues/136))
+- :wrench: Feat(cdn): add unpkg cdn support
+- :arrow_up: Chore: update some third-party libraries
+- **Full Changelog:** @Lruihao [`v0.2.14...v0.2.15`](https://github.com/Lruihao/FixIt/compare/v0.2.14...v0.2.15)
+
 ## v0.2.14 [2022.5.15]
 
 > Add hugo new features support.
+> Snapshot: <https://fixit-p1tg6tsml-lruihao.vercel.app>
 
 - :recycle: Refactor: header layout
   - :tada: Feat: add sub menu (nested menu) support ([#31](https://github.com/Lruihao/FixIt/issues/31))
