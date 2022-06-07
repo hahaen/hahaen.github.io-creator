@@ -18,3 +18,9 @@ hugo new posts/名字.md
 hugo -D
 ```
 
+* 查看hugo使用版本
+
+```
+hugo version
+```
+
