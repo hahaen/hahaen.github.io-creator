@@ -2,5 +2,5 @@
 	path = themes/LoveIt
 	url = https://ghproxy.com/https://github.com/dillonzq/LoveIt.git
 [submodule "themes/FixIt"]
-    	path = themes/FixIt
-    	url = https://ghproxy.com/https://github.com/Lruihao/FixIt
+    path = themes/FixIt
+    url = https://ghproxy.com/https://github.com/Lruihao/FixIt.git
