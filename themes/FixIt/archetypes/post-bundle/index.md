@@ -3,7 +3,7 @@ title: "{{ replace .TranslationBaseName "-" " " | title }}"
 subtitle: ""
 date: {{ .Date }}
 draft: true
-author: ""
+author: "hahaen"
 authorLink: ""
 authorEmail: ""
 description: ""
@@ -13,9 +13,9 @@ comment: false
 weight: 0
 
 tags:
-- draft
-categories:
-- draft
+- java
+  categories:
+- java知识
 
 hiddenFromHomePage: false
 hiddenFromSearch: false
@@ -33,7 +33,7 @@ math:
   enable: false
 lightgallery: false
 seo:
-  images: []
+  images: [/img/系统图片/avatar.png]
 
 # See details front matter: /theme-documentation-content/#front-matter
 ---

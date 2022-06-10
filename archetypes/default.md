@@ -2,7 +2,7 @@
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 draft: false
-tags: [笔记]
-categories: [笔记]
+tags: [java]
+categories: [java知识]
 ---
 ## 内容
